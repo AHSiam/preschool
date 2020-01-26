@@ -8,7 +8,8 @@
 
 	    private function __construct() {
 	        try {
-	            $db = new PDO('mysql:host=85.184.248.64;dbname=sct_hr', 'root', 'plc-db');
+	            // $db = new PDO('mysql:host=85.184.248.64;dbname=sct_hr', 'root', 'plc-db');
+	            $db = new PDO('mysql:host=localhost;dbname=sct_hr', 'root', '');
 			    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
