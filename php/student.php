@@ -82,10 +82,13 @@
         }
 
         function get_all_student($take, $skip){
-            $query ="SELECT * from s_infos LIMIT $skip,$take";
+            if($take == "all"){
+	            $query ="SELECT * from s_infos";
+	        }else{
+	            $query ="SELECT * from s_infos LIMIT $skip,$take";
+	        }
             $data = $this->db->prepare($query);
             $data->execute();
-            // echo "hi";die();
             $data->setFetchMode(PDO::FETCH_ASSOC);
             $result = $data->fetchAll();
             $total = sizeof($result);
@@ -94,5 +97,3 @@
             return $data_result;
     }
     }
-
-
